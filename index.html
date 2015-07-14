@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="odontogram-app">
+<head>
+     <title>Odontogram!</title>
+
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+
+     <style>
+          .canvas-container, .upper-canvas,{
+               width: 50px !important;
+               height: 50px !important;
+          }
+          .tooth{
+               width: 60px !important;
+               height: 50px !important;
+          }
+     </style>
+
+     <script src="js/jquery-2.1.0.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <!--<script src="js/bootstrap-contextmenu.js"></script>-->
+     <script src="js/angular.min.js"></script>
+     <script src="js/fabric.min.js"></script>
+     <script src="js/services/Odontogram.js"></script>
+     <script src="js/directives/OdontogramDirective.js"></script>
+     <script src="js/controllers/OdontogramCtrl.js"></script>
+</head>
+<body>
+     <div ng-controller="OdontogramController" ng-init="init()">
+          <div class="row">
+               <div class="col-sm-12">
+                    <!-- <button role="buton" ng-click="saveSideTooth()" class="btn btn-primary">Click me!</button> -->
+                    <div ng-if="symptoms.length">
+                    <button class="btn btn-primary" ng-repeat="symptom in symptoms" ng-click="applyColor(symptom)">{{symptom.name}}</button>
+                    </div>
+                    <br />
+                    <span>Selected side tooth id: {{selectedId}}</span> <br />
+                    <span>Selected side name: {{selectedName}}</span> <br />
+                    <span>Selected side label: {{selectedSide.label}}</span>
+               </div>
+          </div>
+          <br />
+          <dev-odontogram clickevent="clickFace" options="symptoms"/>
+          
+     </div>
+
+</body>
+</html>
