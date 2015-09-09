@@ -9,4 +9,4 @@ that make this possible. This is for my future wife... April! (UPDATE she's my w
 Currently working on code and docs.
 
 
-##Note: For this moment, I'm not integrating any change, please be patient, it's almost done :P
+##Note: In this moment, I'm not integrating any change, please be patient, it's almost done :P
